@@ -1,4 +1,4 @@
-package おつかりん;
+package otukarin;
 
 import java.io.IOException;
 
