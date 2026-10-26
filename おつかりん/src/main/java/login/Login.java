@@ -1,4 +1,4 @@
-package otukarin;
+package login;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns={"/chapter10/filter-sample"})
+@WebServlet(urlPatterns={"/login/Login"})
 public class Login extends HttpServlet {
 
 	public void doGet (
@@ -18,6 +18,13 @@ public class Login extends HttpServlet {
 			request.getRequestDispatcher("login.jsp")
 			.forward(request, response);
 		}
-	}
 
-	public 
+	public 	void doPost(
+		HttpServletRequest request, HttpServletResponse response
+	    ) throws ServletException, IOException {
+		String user=request.getParameter("user");
+		String ID=request.getParameter("ID");
+	    request.getRequestDispatcher("top.jsp")
+		.forward(request, response);
+	}
+}
